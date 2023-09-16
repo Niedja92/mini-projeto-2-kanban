@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { postLogin } from "../services/user-service"
 import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
-
+import { Link, useNavigate } from "react-router-dom"
+import { FormLogin, ContainerLogin, LabelInput, ButtonForm, LinkRegister } from "../assets/global-style"
 
 type ValuesProps = {
     email: string
@@ -40,31 +40,29 @@ export default function Login() {
     }
 
     return (
-        <>
-            <h1>Login</h1>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
-
-            <form onSubmit={handleSubmit}>
+        <ContainerLogin>
+            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+            <FormLogin onSubmit={handleSubmit}>
                 <h1>Arnia Trello</h1>
-                <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input type="text" name="email" onChange={handleChange} />
-                </div>
+                <LabelInput>
+                    <label htmlFor="email">E-mail</label><br />
+                    <input type="text" name="email" required onChange={handleChange} />
+                </LabelInput>
+
+                <LabelInput>
+                    <label htmlFor="password">Senha</label><br />
+                    <input type="password" name="password" required onChange={handleChange} />
+                </LabelInput>
 
                 <div>
-                    <label htmlFor="password">Senha</label>
-                    <input type="password" name="password" onChange={handleChange} />
+                    <ButtonForm type="submit">ENTRAR</ButtonForm>
                 </div>
 
-                <div>
-                    <button type="submit">Entrar</button>
-                </div>
+                <Link to="/register">
+                    <LinkRegister>Cadastrar-se</LinkRegister>
+                </Link>
 
-                <div>
-                    <a>Cadastrar-se</a>
-                </div>
-
-            </form>
-        </>
+            </FormLogin>
+        </ContainerLogin>
     )
 }

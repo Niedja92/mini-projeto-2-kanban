@@ -1,12 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "./pages/login";
+import BaseLayout from "./components/base-layout/Header";
+import Kanban from "./pages/kanban";
 
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<h1>AQUI VAI MEU BASE LAYOUT</h1>}>
-                    <Route index element={<h1>KANBAN</h1>} />
+                <Route path="/" element={<BaseLayout />}>
+                    <Route index element={<Kanban />} />
                     <Route path="/logout" element={<h1>SAIR</h1>} />
                 </Route>
                 <Route path="/login" element={<Login />} />

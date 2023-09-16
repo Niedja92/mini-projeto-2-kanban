@@ -1,8 +1,9 @@
-export type StatusType = "ToDO" | "Doing" | "Done";
+//crie um Literal Type
+type Column = "TODO" | "DOING" | "DONE"
 
-export interface CardType {
-    id: string;
-    title: string;
-    content: string;
-    status: StatusType;
+interface Card {
+    _id: string
+    title: string
+    content: string
+    column: Column
 }
