@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from "react"
 import { Box, Column } from "../../assets/global-style"
 import { updateCardService } from "../../services/card-service"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowCircleRight, faArrowCircleLeft, faTrash, faEdit, faSave } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
     title: string
@@ -47,8 +49,11 @@ export default function Cards({ title, cards, setCards }: Props) {
                         <h3>{card.title} - {card.column}</h3>
                         <div>{card.content}</div>
                         <div>
-                            {card.column !== 'TODO' && <button onClick={() => moveToLeft(card)}>&lt;</button>}
-                            {card.column !== 'DONE' && <button onClick={() => moveToRight(card)}>&gt;</button>}
+                            <button><FontAwesomeIcon icon={faEdit} /></button>
+                            {card.column !== 'TODO' && <button onClick={() => moveToLeft(card)}><FontAwesomeIcon icon={faArrowCircleLeft} /></button>}
+                            <button><FontAwesomeIcon icon={faTrash} /></button>
+                            {card.column !== 'DONE' && <button onClick={() => moveToRight(card)}><FontAwesomeIcon icon={faArrowCircleRight} /></button>}
+                            <button><FontAwesomeIcon icon={faSave} /></button>
                         </div>
                     </Box>
                 ))}

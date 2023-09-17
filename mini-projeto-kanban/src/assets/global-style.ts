@@ -59,20 +59,30 @@ export const LinkRegister = styled.nav`
 `
 
 export const Container = styled.div`
+    font-family: 'Poppins', sans-serif;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 `
 export const Column = styled.div`
-    border: 1px solid #676767;
+    border: 1px solid #EAEAEA;
     padding: 0.5rem;
     min-height: 100vh;
-    background-color: #f2f2f2;
+    background-color: #EAEAEA;
+    border-radius: 7px;
+
+    h1 {
+        color: #3A72F8;
+    }
 `
 export const Box = styled.div`
     border: 1px solid #ddd;
     background-color: #fff;
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border-radius: 4px;
+`
+export const NewTask = styled.div`
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.28);
 `
