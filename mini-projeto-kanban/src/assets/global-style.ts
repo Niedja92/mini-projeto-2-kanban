@@ -57,12 +57,28 @@ export const LinkRegister = styled.nav`
     font-weight: 300;
     margin-top: 2rem;
 `
+export const HeaderStyle = styled.header`
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #3A72F8;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px 0px 10px;
+    height: 5rem;
+
+    h3, p {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+`
 
 export const Container = styled.div`
     font-family: 'Poppins', sans-serif;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    margin: 3.5rem;
 `
 export const Column = styled.div`
     border: 1px solid #EAEAEA;
@@ -73,16 +89,46 @@ export const Column = styled.div`
 
     h1 {
         color: #3A72F8;
+        margin-left: 1rem;
     }
 `
 export const Box = styled.div`
-    border: 1px solid #ddd;
-    background-color: #fff;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-`
-export const NewTask = styled.div`
-    border-radius: 10px;
+    border-radius: 15px;
     background: #FFF;
     box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.28);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    height: 15rem;
+`
+export const NewTask = styled.div`
+    border-radius: 15px;
+    background: #FFF;
+    box-shadow: 2px 4px 3px 0px rgba(0, 0, 0, 0.28);
+    padding: 0.5rem;
+    height: 15rem;
+
+    input, textarea {
+        border-radius: 20px;
+        width: 90%;
+        padding: 0.5rem;
+        margin: 5px;
+        font-size: 16px;
+        color: #575757;
+        border: 1px solid #575757;
+        outline: none;
+    }
+
+    input {
+        margin: 5px;
+        font-size: 16px;
+        color: #575757;
+        font-weight: 700;
+        border: 1px solid #575757;
+        outline: none;
+    }
+
+    textarea {
+        height: 6rem;   
+        resize: none;
+    }
 `
